@@ -37,7 +37,7 @@ program
         type: 'list',
         name: 'frame',
         message: '选择要下载的模板',
-        choices: ['cf-h5', 'cf-web'，'cf-admin']
+        choices: ['cf-h5', 'cf-web','cf-admin']
       }
     ]).then((paramater) => {
       const targetPath = path.resolve(__dirname, name);
