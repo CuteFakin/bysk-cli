@@ -1,7 +1,7 @@
 {
-  "name": "cfc-cli",
-  "version": "1.0.4",
-  "description": "cfc-cli",
+  "name": "bysk-cli",
+  "version": "1.0.0",
+  "description": "bysk-cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,11 @@
   "author": "fakin",
   "license": "ISC",
   "bin": {
-    "cfc": "index.js"
+    "bysk": "index.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/CuteFakin/cfc-cli.git"
+    "url": "https://github.com/CuteFakin/bysk-cli.git"
   },
   "dependencies": {
     "chalk": "^4.1.0",

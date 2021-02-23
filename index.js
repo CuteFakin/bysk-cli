@@ -14,7 +14,7 @@ program.version('1.0.0')
 program
   .command('init')
   .arguments('<name>')
-  .description('初始化 cf-cli 脚手架')
+  .description('初始化脚手架')
   .action((name) => {
     const targetPath = path.resolve(process.cwd(), name);
     if (fs.existsSync(targetPath)) {
@@ -37,7 +37,7 @@ program
         type: 'list',
         name: 'frame',
         message: '选择要下载的模板',
-        choices: ['cfc-h5|vue2.x自适应H5', 'cf-web|vue2.x+element']
+        choices: ['bysk-h5|vue2.x自适应H5', 'bysk-web|vue2.x+element']
       }
     ]).then((paramater) => {
       const targetPath = path.resolve(__dirname, name);
