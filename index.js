@@ -37,14 +37,14 @@ program
         type: 'list',
         name: 'frame',
         message: '选择要下载的模板',
-        choices: ['cf-h5', 'cf-web','cf-admin']
+        choices: ['cfc-h5|vue2.x自适应H5', 'cf-web|vue2.x+element']
       }
     ]).then((paramater) => {
       const targetPath = path.resolve(__dirname, name);
-      console.log(paramater);
+      const url = paramater.frame.split('|')[0]
       // 在下载前提示
       const spinner = ora('正在下载模板...').start()
-      const downLoadUrl = `github:CuteFakin/${paramater.frame}`
+      const downLoadUrl = `github:CuteFakin/${url}`
       downloadGitRepo(downLoadUrl, targetPath, { clone: true }, err => {
         if (err) {
           spinner.fail()
