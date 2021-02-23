@@ -1,6 +1,6 @@
 {
   "name": "bysk-cli",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "bysk-cli",
   "main": "index.js",
   "scripts": {

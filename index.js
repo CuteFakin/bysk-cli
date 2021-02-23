@@ -9,7 +9,7 @@ const path = require('path');
 const Handlebars = require('handlebars');
 const fs = require('fs');
 // 设置指令版本
-program.version('1.0.3')
+program.version('1.0.4')
 
 program
   .command('init')
@@ -47,7 +47,7 @@ program
       console.log("下载目录："+chalk.greenBright(targetPath))
       const url = paramater.frame.split('|')[0]
       // 在下载前提示
-      const downLoadUrl = `github:CuteFakin/${url}#master`
+      const downLoadUrl = `https://github.com:CuteFakin/${url}#master`
       const spinner = ora('正在下载模板...').start()
       downloadGitRepo(downLoadUrl, targetPath, { clone: true }, err => {
         if (err) {
