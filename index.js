@@ -9,7 +9,7 @@ const path = require('path');
 const Handlebars = require('handlebars');
 const fs = require('fs');
 // 设置指令版本
-program.version('1.0.0')
+program.version('1.0.3')
 
 program
   .command('init')
@@ -24,14 +24,17 @@ program
     inquirer.prompt([
       {
         name: "name",
-        message: "项目名称："
+        message: "项目名称：",
+        default:'bysk'
       },
       {
         name: "description",
-        message: "描述："
+        message: "描述：",
+        default:'bysk'
       }, {
         name: "author",
-        message: "作者："
+        message: "作者：",
+        default:'bysk'
       },
       {
         type: 'list',
@@ -44,8 +47,8 @@ program
       console.log("下载目录："+chalk.greenBright(targetPath))
       const url = paramater.frame.split('|')[0]
       // 在下载前提示
+      const downLoadUrl = `github:CuteFakin/${url}#master`
       const spinner = ora('正在下载模板...').start()
-      const downLoadUrl = `github:CuteFakin/${url}`
       downloadGitRepo(downLoadUrl, targetPath, { clone: true }, err => {
         if (err) {
           spinner.fail()
@@ -67,7 +70,7 @@ program
           console.log(
             chalk.greenBright("开启项目") + '\n' +
             chalk.greenBright("cd " + name) + '\n' +
-            chalk.greenBright("npm run install") + '\n' +
+            chalk.greenBright("npm install") + '\n' +
             chalk.greenBright("npm run serve"));
         }
       })
