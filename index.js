@@ -40,7 +40,8 @@ program
         choices: ['bysk-h5|vue2.x自适应H5', 'bysk-web|vue2.x+element']
       }
     ]).then((paramater) => {
-      const targetPath = path.resolve(__dirname, name);
+      const targetPath = path.resolve(process.cwd(), name);
+      console.log("下载目录："+chalk.greenBright(targetPath))
       const url = paramater.frame.split('|')[0]
       // 在下载前提示
       const spinner = ora('正在下载模板...').start()
